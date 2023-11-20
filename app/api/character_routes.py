@@ -5,7 +5,7 @@ from .auth_routes import validation_errors_to_error_messages
 from app.forms import character_form
 from datetime import date
 
-character_routes = Blueprint('character', __name__)
+character_routes = Blueprint('characters', __name__)
 
 @character_routes.route('/<id>')
 def character(id):
