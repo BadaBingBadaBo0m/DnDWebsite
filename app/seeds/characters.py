@@ -18,6 +18,7 @@ def seed_characters():
     )
 
     db.session.add(character1)
+    db.session.commit()
 
 def undo_characters():
     if environment == "production":
