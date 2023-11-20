@@ -3,7 +3,7 @@ from sqlalchemy.sql import text
 
 def seed_characters():
     character1 = Character(
-        ownerId = 1,
+        owner_id = 1,
         level = 1,
         name = "Bruh",
         gender = "Male",

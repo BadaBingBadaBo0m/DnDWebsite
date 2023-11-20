@@ -3,7 +3,7 @@ from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, Length
 
 class CharacterForm(FlaskForm):
-    ownerId = IntegerField('owner')
+    owner_id = IntegerField('owner')
     level = IntegerField('level')
     name = StringField('name', validators=[DataRequired(), Length(min=1, max=50, message="Character's name must be between 1 to 50 characters!")])
     gender = StringField('gender', validators=[DataRequired(), Length(min=1, max=50, message="Character's gender must be between 1 to 50 characters!")])

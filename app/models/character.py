@@ -8,7 +8,7 @@ class Character(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    ownerId = db.Column(db.Integer, db.ForeignKey(
+    owner_id = db.Column(db.Integer, db.ForeignKey(
         add_prefix_for_prod('users.id')), nullable=False)
     level = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(50), nullable=False)
@@ -33,7 +33,7 @@ class Character(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'ownerId': self.ownerId,
+            'owner_id': self.ownerId,
             'level': self.level,
             'name': self.name,
             'gender': self.gender,
@@ -45,7 +45,7 @@ class Character(db.Model):
             'intelligence': self.intelligence,
             'wisdom': self.wisdom,
             'charisma': self.charisma,
-            'createdAt': self.createdAt,
-            'updatedAt': self.updatedAt,
+            'created_at': self.createdAt,
+            'updated_at': self.updatedAt,
             'owner': self.owner.to_dict()
         }
