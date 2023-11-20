@@ -24,7 +24,6 @@ class Character(db.Model):
     #skills = db.Column(db.String(50), nullable=True)
     #spell_slot = db.Column(db.String(50), nullable=True)
     #race = db.Column(db.String(50), nullable=False)
-    #race = db.Column(db.String(50), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now())
 
@@ -34,7 +33,7 @@ class Character(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'ownerId': self.content,
+            'ownerId': self.ownerId,
             'level': self.level,
             'name': self.name,
             'gender': self.gender,
