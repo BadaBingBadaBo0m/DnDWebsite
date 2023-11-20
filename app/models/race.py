@@ -14,3 +14,15 @@ class Race(db.Model):
     subrace = db.Column(db.String(50), nullable=True)
     size = db.Column(db.String(50), nullable=True)
     speed = db.Column(db.Integer, nullable=True)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'racial_traits': self.racial_traits,
+            'language': self.language,
+            'subrace': self.subrace,
+            'size': self.size,
+            'speed': self.speed
+        }
