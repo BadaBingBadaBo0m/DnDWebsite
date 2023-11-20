@@ -33,7 +33,7 @@ class Character(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'owner_id': self.ownerId,
+            'owner_id': self.owner_id,
             'level': self.level,
             'name': self.name,
             'gender': self.gender,
@@ -45,7 +45,7 @@ class Character(db.Model):
             'intelligence': self.intelligence,
             'wisdom': self.wisdom,
             'charisma': self.charisma,
-            'created_at': self.createdAt,
-            'updated_at': self.updatedAt,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
             'owner': self.owner.to_dict()
         }
