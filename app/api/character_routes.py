@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import login_required, current_user
-from app.models import Character, db, 
+from app.models import Character, db 
 from .auth_routes import validation_errors_to_error_messages
 from app.forms import character_form
 from datetime import date
