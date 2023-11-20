@@ -29,6 +29,8 @@ class Character(db.Model):
 
     # User and character relationship
     owner = db.relationship('User', back_populates='characters')
+    # Character and spell relationship
+    spells = db.relationship('Spell', secondary='character_spells', back_populates='characters')
 
     def to_dict(self):
         return {

@@ -18,6 +18,9 @@ class Spell(db.Model):
     description = db.Column(db.String(500), nullable=True)
     saves = db.Column(db.String(100), nullable=True)
 
+    # Spell to character relationship
+    characters = db.relationship('Character', secondary='character_spells', back_populates='spells')
+
     def to_dict(self):
         return {
             'id': self.id,
