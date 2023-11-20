@@ -17,3 +17,18 @@ class Spell(db.Model):
     damage_dice = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(500), nullable=True)
     saves = db.Column(db.String(100), nullable=True)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'spell_level': self.spell_level,
+            'range': self.range,
+            'duration': self.duration,
+            'effect': self.effect,
+            'hit_dice': self.hit_dice,
+            'modifier': self.modifier,
+            'damage_dice': self.damage_dice,
+            'description': self.description,
+            'saves': self.saves
+        }
