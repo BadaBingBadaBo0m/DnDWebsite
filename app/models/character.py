@@ -28,6 +28,9 @@ class Character(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now())
 
+    # User and character relationship
+    owner = db.relationship('User', back_populates='characters')
+
     def to_dict(self):
         return {
             'id': self.id,
@@ -45,4 +48,5 @@ class Character(db.Model):
             'charisma': self.charisma,
             'createdAt': self.createdAt,
             'updatedAt': self.updatedAt,
+            'owner': self.owner.to_dict()
         }
