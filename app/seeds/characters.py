@@ -1,4 +1,5 @@
 from app.models import db, Character, environment, SCHEMA
+from sqlalchemy.sql import text
 
 def seed_characters():
     character1 = Character(
@@ -16,7 +17,7 @@ def seed_characters():
         charisma = 10
     )
 
-db.session.add(question1)
+    db.session.add(character1)
 
 def undo_characters():
     if environment == "production":
