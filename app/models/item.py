@@ -13,3 +13,14 @@ class Item(db.Model):
     damage = db.Column(db.String(100), nullable=True)
     weight = db.Column(db.Float, nullable=False)
     cost = db.Column(db.Float, nullable=False)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'type': self.type,
+            'damage': self.damage,
+            'weight': self.weight,
+            'cost': self.cost 
+        }

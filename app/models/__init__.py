@@ -4,4 +4,5 @@ from .character import Character
 from .spell import Spell
 from .skill import Skill
 from .race import Race
+from .item import Item
 from .db import environment, SCHEMA
