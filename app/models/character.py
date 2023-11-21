@@ -37,6 +37,8 @@ class Character(db.Model):
     race = db.relationship('Race', back_populates='characters')
     # Character and feat relationship
     feats = db.relationship('Feat', secondary='character_feats', back_populates='characters')
+    # Character and inventory relationship
+    items = db.relationship('Item', secondary='character_inventory', back_populates='characters')
 
     def to_dict(self):
         return {
@@ -58,5 +60,6 @@ class Character(db.Model):
             'owner': self.owner.to_dict(),
             'spells': [spell.to_dict() for spell in self.spells],
             'skills': [skill.to_dict() for skill in self.skills],
+            'items': [item.to_dict() for item in self.items],
             'race': self.race.to_dict()
         }
