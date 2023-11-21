@@ -35,7 +35,7 @@ class Character(db.Model):
     # Character and feat relationship
     feats = db.relationship('Feat', secondary='character_feats', back_populates='characters')
     # Character and inventory relationship
-    items = db.relationship('Item', secondary='character_inventory', back_populates='characters')
+    items = db.relationship('Item', secondary='character_inventories', back_populates='characters')
     # Character and campaign relationship
     campaign = db.relationship('Campaign', secondary='campaign_characters', back_populates='characters')
 
