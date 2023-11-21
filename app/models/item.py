@@ -15,7 +15,7 @@ class Item(db.Model):
     cost = db.Column(db.Float, nullable=False)
 
     # Item to character relationship
-    characters = db.relationship('Character', secondary='character_inventory', back_populates='items')
+    characters = db.relationship('Character', secondary='character_inventories', back_populates='items')
 
     def to_dict(self):
         return {

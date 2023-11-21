@@ -1,7 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
-character_inventory = db.Table(
-    'character_inventory',
+character_inventories = db.Table(
+    'character_inventories',
     db.Model.metadata,
     db.Column('id', db.Integer, primary_key=True, autoincrement=True),
     db.Column('character_id', db.Integer, db.ForeignKey(add_prefix_for_prod('characters.id'))),
@@ -11,4 +11,4 @@ character_inventory = db.Table(
 )
 
 if environment == "production":
-    character_inventory.schema = SCHEMA
+    character_inventories.schema = SCHEMA
