@@ -10,7 +10,16 @@ def seed_races():
         speed = 30
     )
 
+    tiefling = Race(
+        name = 'Tiefling',
+        description = "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.",
+        racial_traits = '+2 Charisma, +1 Intelligence, Darkvision, Hellish Resistance, Infernal Legacy',
+        size = 'Medium',
+        speed = 30
+    )
+
     db.session.add(human)
+    db.session.add(tiefling)
     db.session.commit()
 
 def undo_races():
