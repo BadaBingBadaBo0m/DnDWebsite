@@ -31,6 +31,8 @@ class Character(db.Model):
     owner = db.relationship('User', back_populates='characters')
     # Character and spell relationship
     spells = db.relationship('Spell', secondary='character_spells', back_populates='characters')
+    # Character and skill relationship
+    skills = db.relationship('Spell', secondary='character_skills', back_populates='characters')
 
     def to_dict(self):
         return {
@@ -50,5 +52,6 @@ class Character(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'owner': self.owner.to_dict(),
-            'spells': [spell.to_dict() for spell in self.spells]
+            'spells': [spell.to_dict() for spell in self.spells],
+            'skills': [skill.to_dict() for skill in self.skills]
         }
