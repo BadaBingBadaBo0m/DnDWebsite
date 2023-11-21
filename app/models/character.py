@@ -8,9 +8,10 @@ class Character(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    # User id foreign key (should we change this to owner id?)
+    owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    level = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(50), nullable=False)
-    race = db.Column(db.String(50), nullable=False)
+    gender = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(500), nullable=True)
     hit_points = db.Column(db.Integer, nullable=False)
     strength = db.Column(db.Integer, nullable=False)
@@ -19,7 +20,46 @@ class Character(db.Model):
     intelligence = db.Column(db.Integer, nullable=False)
     wisdom = db.Column(db.Integer, nullable=False)
     charisma = db.Column(db.Integer, nullable=False)
-    skills = db.Column(db.String(50), nullable=True)
-    spell_slot = db.Column(db.String(50), nullable=True)
+    race_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('races.id')), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now())
+
+    # User and character relationship
+    owner = db.relationship('User', back_populates='characters')
+    # Character and spell relationship
+    spells = db.relationship('Spell', secondary='character_spells', back_populates='characters')
+    # Character and skill relationship
+    skills = db.relationship('Skill', secondary='character_skills', back_populates='characters')
+    # Character and race relationship
+    race = db.relationship('Race', back_populates='characters')
+    # Character and feat relationship
+    feats = db.relationship('Feat', secondary='character_feats', back_populates='characters')
+    # Character and inventory relationship
+    items = db.relationship('Item', secondary='character_inventory', back_populates='characters')
+    # Character and campaign relationship
+    campaign = db.relationship('Campaign', secondary='campaign_characters', back_populates='characters')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            # 'owner_id': self.owner_id,
+            'level': self.level,
+            'name': self.name,
+            'gender': self.gender,
+            'description': self.description,
+            'hit_points': self.hit_points,
+            'strength': self.strength,
+            'dexterity': self.dexterity,
+            'constitution': self.constitution,
+            'intelligence': self.intelligence,
+            'wisdom': self.wisdom,
+            'charisma': self.charisma,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
+            'owner': self.owner.to_dict(),
+            'spells': [spell.to_dict() for spell in self.spells],
+            'skills': [skill.to_dict() for skill in self.skills],
+            'items': [item.to_dict() for item in self.items],
+            'campaigns': [campaign.to_dict_simple() for campaign in self.campaign],
+            'race': self.race.to_dict()
+        }

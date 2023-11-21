@@ -1,3 +1,8 @@
+## Env.py in Migrations 
+
+The env.py that is part of the starter has been modified from the default, to include code to handle the SCHEMA in production. If you deleted your migrations and did a flask db init you now have the default env.py, not the custom one from the project starter. Make sure you env.py is the same as the code below, and if not replace the entire file with this code
+
+```
 from __future__ import with_statement
 
 import logging
@@ -99,3 +104,20 @@ if context.is_offline_mode():
     run_migrations_offline()
 else:
     run_migrations_online()
+```
+
+
+If you created a new migration file, the first thing you will need to do is import the environment and SCHEMA near the other import statements.
+
+```
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
+```
+
+Next, for each table you are creating in your migration there will be an op.create_table() method call. After each op.create_table() call (and remember the closing ) will be after all the column and constraint details), you will want to add the following conditional statement to handle prefixing the SCHEMA
+
+```
+ if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+```
