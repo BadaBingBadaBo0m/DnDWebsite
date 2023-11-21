@@ -15,6 +15,8 @@ class Race(db.Model):
     size = db.Column(db.String(50), nullable=True)
     speed = db.Column(db.Integer, nullable=True)
 
+    characters = db.relationship('Character', back_populates='race', cascade='all, delete-orphan')
+
     def to_dict(self):
         return {
             'id': self.id,
