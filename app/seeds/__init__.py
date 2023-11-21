@@ -7,6 +7,7 @@ from .skills import seed_skills, undo_skills
 from .character_skills import seed_character_skills, undo_character_skills
 from .races import seed_races, undo_races
 from .items import seed_items, undo_items
+from .character_inventories import seed_character_inventories, undo_character_inventories
 
 from app.models.db import db, environment, SCHEMA
 
@@ -23,6 +24,7 @@ def seed():
         # command, which will  truncate all tables prefixed with 
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
+        #undo_character_inventories()
         undo_character_skills()
         undo_character_spells()
         undo_items()
@@ -39,12 +41,14 @@ def seed():
     seed_character_skills()
     seed_races()
     seed_items()
+    seed_character_inventories()
     # Add other seed functions here
 
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
+    #undo_character_inventories()
     undo_character_skills()
     undo_character_spells()
     undo_races()
