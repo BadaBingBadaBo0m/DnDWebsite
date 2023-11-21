@@ -11,4 +11,4 @@ character_inventory = db.Table(
 )
 
 if environment == "production":
-    character_skills.schema = SCHEMA
+    character_inventory.schema = SCHEMA
