@@ -10,8 +10,17 @@ def seed_items():
         weight = 3.2,
         cost = 15
     )
+    item2 = Item(
+        name = "shortsword",
+        description = "Proficiency with a shortsword allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+        type = "Weapon",
+        damage = "1d6 slashing",
+        weight = 2,
+        cost = 10
+    )
 
     db.session.add(item1)
+    db.session.add(item2)
     db.session.commit()
 
 def undo_items():
