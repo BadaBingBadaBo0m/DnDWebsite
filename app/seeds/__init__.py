@@ -39,6 +39,7 @@ def seed():
     seed_character_skills()
     seed_races()
     seed_items()
+    #seed_items()
     # Add other seed functions here
 
 
