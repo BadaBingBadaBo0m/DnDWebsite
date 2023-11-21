@@ -14,7 +14,7 @@ def seed_character_spells():
 
     connection.close()
 
-def undo_channel_members():
+def undo_character_spells():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.character_spells RESTART IDENTITY CASCADE;")
     else:
