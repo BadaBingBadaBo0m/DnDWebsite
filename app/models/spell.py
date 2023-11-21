@@ -12,7 +12,7 @@ class Spell(db.Model):
     range = db.Column(db.String(100), nullable=False)
     duration = db.Column(db.String(100), nullable=False)
     effect = db.Column(db.String(500), nullable=False)
-    hit_dice = db.Column(db.Integer, nullable=False)
+    hit_dice = db.Column(db.String(10), nullable=False)
     modifier = db.Column(db.String(100), nullable=False)
     damage_dice = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(500), nullable=True)
