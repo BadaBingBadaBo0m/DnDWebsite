@@ -20,9 +20,6 @@ class Character(db.Model):
     intelligence = db.Column(db.Integer, nullable=False)
     wisdom = db.Column(db.Integer, nullable=False)
     charisma = db.Column(db.Integer, nullable=False)
-    #skills = db.Column(db.String(50), nullable=True)
-    #spell_slot = db.Column(db.String(50), nullable=True)
-    #race = db.Column(db.String(50), nullable=False)
     race_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('races.id')), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now())
@@ -39,6 +36,8 @@ class Character(db.Model):
     feats = db.relationship('Feat', secondary='character_feats', back_populates='characters')
     # Character and inventory relationship
     items = db.relationship('Item', secondary='character_inventory', back_populates='characters')
+    # Character and campaign relationship
+    campaign = db.relationship('Campaign', secondary='campaign_characters', back_populates='characters')
 
     def to_dict(self):
         return {
@@ -61,5 +60,6 @@ class Character(db.Model):
             'spells': [spell.to_dict() for spell in self.spells],
             'skills': [skill.to_dict() for skill in self.skills],
             'items': [item.to_dict() for item in self.items],
+            'campaigns': [campaign.to_dict() for campaign in self.campaign],
             'race': self.race.to_dict()
         }

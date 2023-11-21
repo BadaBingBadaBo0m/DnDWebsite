@@ -16,6 +16,8 @@ class User(db.Model, UserMixin):
 
     # User and character relationship
     characters = db.relationship('Character', back_populates='owner', cascade='all, delete-orphan')
+    # User and campaign relationship
+    campaigns = db.relationship('Campaign', back_populates='owner', cascade='all, delete-orphan')
 
     @property
     def password(self):
@@ -33,5 +35,6 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'characters': [character.id for character in self.characters]
+            'characters': [character.id for character in self.characters],
+            'campaigns': [campaign.id for campaign in self.campaigns]
         }
