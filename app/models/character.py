@@ -32,7 +32,7 @@ class Character(db.Model):
     # Character and spell relationship
     spells = db.relationship('Spell', secondary='character_spells', back_populates='characters')
     # Character and skill relationship
-    skills = db.relationship('Spell', secondary='character_skills', back_populates='characters')
+    skills = db.relationship('Skill', secondary='character_skills', back_populates='characters')
 
     def to_dict(self):
         return {

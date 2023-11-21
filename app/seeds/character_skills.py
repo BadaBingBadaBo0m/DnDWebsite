@@ -9,8 +9,8 @@ def seed_character_skills():
         {"character_id": 1, "skill_id": 1, "bonus": 1}
     ]
 
-    for spell in data:
-        connection.execute(character_spells.insert(), spell)
+    for skill in data:
+        connection.execute(character_skills.insert(), skill)
 
     connection.close()
 
