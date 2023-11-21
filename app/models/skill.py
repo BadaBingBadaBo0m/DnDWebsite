@@ -10,6 +10,9 @@ class Skill(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(500), nullable=True)
 
+    # Skill to character relationship
+    characters = db.relationship('Character', secondary='character_skills', back_populates='skills')
+
     def to_dict(self):
         return {
             'id': self.id,
