@@ -8,8 +8,7 @@ class Character(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, db.ForeignKey(
-        add_prefix_for_prod('users.id')), nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     level = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(50), nullable=False)
     gender = db.Column(db.String(50), nullable=False)
@@ -24,6 +23,7 @@ class Character(db.Model):
     #skills = db.Column(db.String(50), nullable=True)
     #spell_slot = db.Column(db.String(50), nullable=True)
     #race = db.Column(db.String(50), nullable=False)
+    race_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('races.id')), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now())
 
@@ -33,6 +33,8 @@ class Character(db.Model):
     spells = db.relationship('Spell', secondary='character_spells', back_populates='characters')
     # Character and skill relationship
     skills = db.relationship('Skill', secondary='character_skills', back_populates='characters')
+    # Character and race relationship
+    race = db.relationship('Race', back_populates='characters')
 
     def to_dict(self):
         return {
@@ -53,5 +55,6 @@ class Character(db.Model):
             'updated_at': self.updated_at,
             'owner': self.owner.to_dict(),
             'spells': [spell.to_dict() for spell in self.spells],
-            'skills': [skill.to_dict() for skill in self.skills]
+            'skills': [skill.to_dict() for skill in self.skills],
+            'race': self.race.to_dict()
         }
