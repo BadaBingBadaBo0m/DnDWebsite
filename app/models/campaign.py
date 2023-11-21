@@ -17,3 +17,23 @@ class Campaign(db.Model):
     owner = db.relationship('User', back_populates='campaigns')
     # Character and campaign relationship
     characters = db.relationship('Character', secondary='campaign_characters', back_populates='campaign')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'owner_id': self.owner_id,
+            'name': self.name,
+            'description': self.description,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
+            'owner': self.owner.to_dict(),
+            'characters': [character.to_dict() for character in self.characters]
+        }
+    
+    def to_dict_simple(self):
+        return {
+            'id': self.id,
+            'owner_id': self.owner_id,
+            'name': self.name,
+            'description': self.description,
+        }

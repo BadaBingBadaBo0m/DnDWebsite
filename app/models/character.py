@@ -60,6 +60,6 @@ class Character(db.Model):
             'spells': [spell.to_dict() for spell in self.spells],
             'skills': [skill.to_dict() for skill in self.skills],
             'items': [item.to_dict() for item in self.items],
-            'campaigns': [campaign.to_dict() for campaign in self.campaign],
+            'campaigns': [campaign.to_dict_simple() for campaign in self.campaign],
             'race': self.race.to_dict()
         }
