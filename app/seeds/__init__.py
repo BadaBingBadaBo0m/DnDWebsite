@@ -11,6 +11,7 @@ from .character_inventories import seed_character_inventories, undo_character_in
 from .character_feats import seed_character_feats, undo_character_feats
 from .campaigns import seed_campaigns, undo_campaigns
 from .campaign_characters import seed_campaign_characters, undo_campaign_characters
+from .feats import seed_feats, undo_feats
 
 from app.models.db import db, environment, SCHEMA
 
@@ -32,15 +33,17 @@ def seed():
         undo_character_feats()
         undo_character_skills()
         undo_character_spells()
+        undo_characters()
         undo_items()
         undo_skills()
         undo_spells()
-        undo_characters()
         undo_races()
+        undo_feats()
         undo_campaigns()
         undo_users()
     seed_users()
     seed_campaigns()
+    seed_feats()
     seed_races()
     seed_items()
     seed_spells()
@@ -62,11 +65,12 @@ def undo():
     undo_character_feats()
     undo_character_skills()
     undo_character_spells()
+    undo_characters()
     undo_races()
     undo_skills()
     undo_items()
     undo_spells()
-    undo_characters()
+    undo_feats()
     undo_campaigns()
     undo_users()
     # Add other undo functions here
