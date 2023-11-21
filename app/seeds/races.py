@@ -6,6 +6,8 @@ def seed_races():
         name = 'Human',
         description = "Humans are the most adaptable and ambitious people among the common races. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.",
         racial_traits = '+1 to All Ability Scores, Extra Language',
+        language = "common",
+        subrace = "none",
         size = 'Medium',
         speed = 30
     )

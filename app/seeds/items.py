@@ -8,15 +8,15 @@ def seed_items():
         type = "Weapon",
         damage = "1d8 slashing",
         weight = 3.2,
-        cost = 15
+        cost = 15.0
     )
     item2 = Item(
         name = "shortsword",
         description = "Proficiency with a shortsword allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
         type = "Weapon",
         damage = "1d6 slashing",
-        weight = 2,
-        cost = 10
+        weight = 2.5,
+        cost = 10.0
     )
 
     db.session.add(item1)
