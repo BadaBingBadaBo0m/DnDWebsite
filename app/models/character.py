@@ -49,5 +49,6 @@ class Character(db.Model):
             'charisma': self.charisma,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
-            'owner': self.owner.to_dict()
+            'owner': self.owner.to_dict(),
+            'spells': [spell.to_dict() for spell in self.spells]
         }
