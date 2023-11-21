@@ -7,3 +7,6 @@ campaign_characters = db.Table(
     db.Column('campaign_id', db.Integer, db.ForeignKey(add_prefix_for_prod('campaigns.id'))),
     db.Column('character_id', db.Integer, db.ForeignKey(add_prefix_for_prod('characters.id')))
 )
+
+if environment == "production":
+    campaign_characters.schema = SCHEMA
