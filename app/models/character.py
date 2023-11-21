@@ -35,6 +35,8 @@ class Character(db.Model):
     skills = db.relationship('Skill', secondary='character_skills', back_populates='characters')
     # Character and race relationship
     race = db.relationship('Race', back_populates='characters')
+    # Character and feat relationship
+    feats = db.relationship('Feat', secondary='character_feats', back_populates='characters')
 
     def to_dict(self):
         return {
