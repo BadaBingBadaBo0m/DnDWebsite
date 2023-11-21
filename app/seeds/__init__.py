@@ -4,7 +4,7 @@ from .characters import seed_characters, undo_characters
 from .spells import seed_spells, undo_spells
 from .character_spells import seed_character_spells, undo_character_spells
 from .skills import seed_skills, undo_skills
-from .character_skils import seed_character_skills, undo_character_skills
+from .character_skills import seed_character_skills, undo_character_skills
 
 from app.models.db import db, environment, SCHEMA
 
