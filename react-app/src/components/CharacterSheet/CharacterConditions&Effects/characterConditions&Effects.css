@@ -1,0 +1,16 @@
+#character-hitDice-armorClass-deathSave-container {
+  border: 1px solid red;
+}
+
+.hit-die {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  width: 5rem;
+  border: 1px solid green;
+}
+
+#character-hit-dice-container {
+  display: flex;
+}
