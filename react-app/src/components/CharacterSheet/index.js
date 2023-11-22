@@ -1,6 +1,8 @@
 import React from 'react';
 import './characterSheet.css';
 
+import CharacterAbilityScores from './CharacterAbilityScores';
+
 const CharacterSheet = () => {
 
   return (
@@ -31,6 +33,8 @@ const CharacterSheet = () => {
           <p>Alignment type</p>
         </li>
       </ul>
+
+      <CharacterAbilityScores />
 
     </div>
   )

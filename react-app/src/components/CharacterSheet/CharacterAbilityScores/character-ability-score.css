@@ -1,0 +1,13 @@
+#character-ability-scores {
+  border: 1px solid red;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.ability-score {
+  border: 1px solid blue;
+  width: 10%;
+}
