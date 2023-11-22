@@ -1,0 +1,16 @@
+#character-saving-throws-container {
+  border: 1px solid red;
+  text-align: center;
+  width: fit-content;
+}
+
+#character-saving-throws {
+  display: flex;
+  gap: 1rem;
+}
+
+.saving-throw {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
