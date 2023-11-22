@@ -1,0 +1,13 @@
+#character-vitals-container {
+  border: 1px solid purple;
+
+  display: flex;
+}
+
+#character-temp-max-hp {
+  border: 1px solid red;
+}
+
+#character-current-hp {
+  border: 1px solid green;
+}

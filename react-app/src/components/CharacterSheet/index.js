@@ -3,6 +3,7 @@ import './characterSheet.css';
 
 import CharacterAbilityScores from './CharacterAbilityScores';
 import CharacterSavingThrows from './CharacterSavingThrows';
+import CharacterVitals from './CharacterVitals/CharacterVitals';
 
 const CharacterSheet = () => {
 
@@ -39,6 +40,8 @@ const CharacterSheet = () => {
 
       <div id='character-sheet-character-stats'>
         <CharacterSavingThrows />
+
+        <CharacterVitals />
       </div>
 
     </div>

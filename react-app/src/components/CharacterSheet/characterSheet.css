@@ -16,3 +16,8 @@
 .character-info-li {
   text-align: center;
 }
+
+#character-sheet-character-stats {
+  display: flex;
+  gap: 1rem;
+}
