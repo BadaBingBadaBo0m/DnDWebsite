@@ -45,3 +45,24 @@ def create_a_character():
         db.session.commit()
         return new_character.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@character_routes.route('/delete/<id>', methods=['DELETE'])
+@login_required
+def deleta_a_character(id):
+    """
+    Query for deleting a character
+    """
+    current_user_dict = current_user.to_dict()
+    to_delete = Character.query.get(id)
+    
+    if not to_delete:
+        return {'Message': 'Character does not exist'}
+    
+    to_delete_dict = to_delete.to_dict()
+
+    if current_user_dict['id'] == to_delete_dict['owner_id']:
+        db.session.delete(to_delete)
+        db.session.commit()
+        return {'Message': 'Character deleted'}
+    return {'Message': 'You do not have permission to delete this character'}

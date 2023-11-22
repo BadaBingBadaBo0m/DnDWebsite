@@ -56,6 +56,7 @@ class Character(db.Model):
             'intelligence': self.intelligence,
             'wisdom': self.wisdom,
             'charisma': self.charisma,
+            'owner_id': self.owner_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'owner': self.owner.to_dict(),
