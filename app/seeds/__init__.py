@@ -66,7 +66,7 @@ def seed():
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
-    # undo_character_classes()
+    undo_character_classes()
     undo_character_inventories()
     undo_campaign_characters()
     undo_character_feats()
