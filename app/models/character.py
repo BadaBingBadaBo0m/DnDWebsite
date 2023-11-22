@@ -39,7 +39,7 @@ class Character(db.Model):
     # Character and campaign relationship
     campaign = db.relationship('Campaign', secondary='campaign_characters', back_populates='characters')
     # Character and class relationship
-    classes = db.relationship('Class', secondary='character_classes', back_populates='characters')
+    classes = db.relationship('Character_Class', secondary='character_classes', back_populates='characters')
 
     def to_dict(self):
         return {

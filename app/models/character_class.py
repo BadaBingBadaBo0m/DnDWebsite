@@ -1,6 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
-class Class(db.Model):
+class Character_Class(db.Model):
     __tablename__ = 'classes'
 
     if environment == "production":

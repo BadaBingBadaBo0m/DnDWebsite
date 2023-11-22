@@ -12,6 +12,8 @@ from .character_feats import seed_character_feats, undo_character_feats
 from .campaigns import seed_campaigns, undo_campaigns
 from .campaign_characters import seed_campaign_characters, undo_campaign_characters
 from .feats import seed_feats, undo_feats
+from .classes import seed_classes, undo_classes
+from .character_classes import seed_character_classes, undo_character_classes   
 
 from app.models.db import db, environment, SCHEMA
 
@@ -28,6 +30,7 @@ def seed():
         # command, which will  truncate all tables prefixed with 
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
+        undo_character_classes()
         undo_character_inventories()
         undo_campaign_characters()
         undo_character_feats()
@@ -39,10 +42,12 @@ def seed():
         undo_spells()
         undo_races()
         undo_feats()
+        undo_classes()
         undo_campaigns()
         undo_users()
     seed_users()
     seed_campaigns()
+    seed_classes()
     seed_feats()
     seed_races()
     seed_items()
@@ -54,12 +59,14 @@ def seed():
     seed_character_feats()
     seed_campaign_characters()
     seed_character_inventories()
+    seed_character_classes()
     # Add other seed functions here
 
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
+    # undo_character_classes()
     undo_character_inventories()
     undo_campaign_characters()
     undo_character_feats()
@@ -71,6 +78,7 @@ def undo():
     undo_items()
     undo_spells()
     undo_feats()
+    undo_classes()
     undo_campaigns()
     undo_users()
     # Add other undo functions here
