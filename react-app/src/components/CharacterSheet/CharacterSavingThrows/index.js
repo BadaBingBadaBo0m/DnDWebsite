@@ -24,6 +24,7 @@ const CharacterSavingThrows = () => {
             </li>
           </ul>
         </div>
+
         <div>
           <ul>
             <li className='saving-throw'>
