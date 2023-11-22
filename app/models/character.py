@@ -38,6 +38,8 @@ class Character(db.Model):
     items = db.relationship('Item', secondary='character_inventories', back_populates='characters')
     # Character and campaign relationship
     campaign = db.relationship('Campaign', secondary='campaign_characters', back_populates='characters')
+    # Character and class relationship
+    classes = db.relationship('Character_Class', secondary='character_classes', back_populates='characters')
 
     def to_dict(self):
         return {
@@ -54,6 +56,7 @@ class Character(db.Model):
             'intelligence': self.intelligence,
             'wisdom': self.wisdom,
             'charisma': self.charisma,
+            'owner_id': self.owner_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'owner': self.owner.to_dict(),
@@ -61,5 +64,6 @@ class Character(db.Model):
             'skills': [skill.to_dict() for skill in self.skills],
             'items': [item.to_dict() for item in self.items],
             'campaigns': [campaign.to_dict_simple() for campaign in self.campaign],
+            'classes': [class_.to_dict() for class_ in self.classes],
             'race': self.race.to_dict()
         }

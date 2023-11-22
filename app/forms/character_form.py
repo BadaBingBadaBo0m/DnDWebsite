@@ -15,3 +15,4 @@ class CharacterForm(FlaskForm):
     intelligence = IntegerField('intelligence')
     wisdom = IntegerField('wisdom')
     charisma = IntegerField('charisma')
+    race_id = IntegerField("race_id")
