@@ -22,3 +22,17 @@
   display: flex;
   flex-direction: column;
 }
+
+.death-save {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border: 1px solid green;
+}
+
+#conditions-effects {
+  border: 1px solid green;
+  text-align: center;
+  ;
+}
