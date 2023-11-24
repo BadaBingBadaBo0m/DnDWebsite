@@ -8,7 +8,7 @@ from datetime import datetime
 character_routes = Blueprint('characters', __name__)
 
 
-# Query for one character and returns in in a character dictionary
+# Query for one character and returns in a character dictionary
 @character_routes.route('/<id>')
 def character(id):
     """

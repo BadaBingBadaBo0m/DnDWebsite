@@ -12,7 +12,7 @@ spell_routes = Blueprint('spells', __name__)
 @spell_routes.route('/')
 def spells():
     """
-    Query for all characters and returns them in a list of spell dictionaries
+    Query for all spells and returns them in a list of spell dictionaries
     """
     spells= Spell.query.all()
     return_list = []
@@ -21,7 +21,7 @@ def spells():
         return_list.append(spell_dict)
     return return_list
 
-# Query for one spell and returns in in a spell dictionary
+# Query for one spell and returns in a spell dictionary
 @spell_routes.route('/<id>')
 def spell(id):
     """
