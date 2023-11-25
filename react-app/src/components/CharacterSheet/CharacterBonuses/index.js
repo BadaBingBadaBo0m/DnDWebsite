@@ -21,7 +21,7 @@ const CharacterBonuses = () => {
       </li>
 
       <li className='character-bonus'>
-        <h2 className='character-sheet-h2'>CONCENTRATION SAVE</h2>
+        <h2 className='character-sheet-h2'>PASSIVE PERCEPTION</h2>
         <p>+0</p>
       </li>
     </ul>
