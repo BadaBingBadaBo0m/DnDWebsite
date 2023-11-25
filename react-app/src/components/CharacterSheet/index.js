@@ -5,6 +5,7 @@ import CharacterAbilityScores from './CharacterAbilityScores';
 import CharacterSavingThrows from './CharacterSavingThrows';
 import CharacterVitals from './CharacterVitals';
 import CharacterConditionsAndEffects from './CharacterConditions&Effects';
+import CharacterBonuses from './CharacterBonuses';
 
 const CharacterSheet = () => {
 
@@ -45,6 +46,8 @@ const CharacterSheet = () => {
         <CharacterVitals />
 
         <CharacterConditionsAndEffects />
+
+        <CharacterBonuses />
       </div>
 
     </div>
