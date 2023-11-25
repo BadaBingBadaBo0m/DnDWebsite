@@ -8,7 +8,7 @@ from datetime import datetime
 spell_routes = Blueprint('spells', __name__)
 
 
-#Query for all spells and returns them in a spell dictionary
+#Query for all spells and returns them in a list of dictionaries
 @spell_routes.route('/')
 def spells():
     """

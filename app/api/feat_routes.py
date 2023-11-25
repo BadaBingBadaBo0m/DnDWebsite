@@ -8,7 +8,7 @@ from datetime import datetime
 feat_routes = Blueprint('feats', __name__)
 
 
-#Query for all feats and returns them in a feat dictionary
+#Query for all feats and returns them in a list of dictionaries
 @feat_routes.route('/')
 def feats():
     """

@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.character_routes import character_routes
 from .api.spell_routes import spell_routes
 from .api.feat_routes import feat_routes
+from .api.character_class_routes import character_class_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -34,6 +35,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(character_routes, url_prefix='/api/characters')
 app.register_blueprint(spell_routes, url_prefix='/api/spells')
 app.register_blueprint(feat_routes, url_prefix='/api/feats')
+app.register_blueprint(character_class_routes, url_prefix='/api/classes')
 db.init_app(app)
 Migrate(app, db)
 
