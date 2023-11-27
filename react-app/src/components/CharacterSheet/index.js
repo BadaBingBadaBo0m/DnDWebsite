@@ -53,7 +53,7 @@ const CharacterSheet = () => {
         <CharacterBonuses />
       </div>
 
-      <div id='character-proficiency-skills-multi-media'>
+      <div id='character-proficiency-skills-quick-reference'>
         <CharacterSkills />
 
         <CharacterProficiencies />
