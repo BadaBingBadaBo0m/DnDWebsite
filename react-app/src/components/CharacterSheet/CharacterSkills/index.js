@@ -6,6 +6,7 @@ const CharacterSkills = () => {
   return (
     <div id='character-skills-tree'>
       <ul>
+
         <li className='character-skills-li'>
           <i class="fa-regular fa-circle"></i>
           <p>1</p>
