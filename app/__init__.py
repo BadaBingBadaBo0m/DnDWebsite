@@ -8,6 +8,12 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.character_routes import character_routes
+from .api.spell_routes import spell_routes
+from .api.feat_routes import feat_routes
+from .api.character_class_routes import character_class_routes
+from .api.item_routes import item_routes
+from .api.race_routes import race_routes
+from .api.skill_routes import skill_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -30,6 +36,12 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(character_routes, url_prefix='/api/characters')
+app.register_blueprint(spell_routes, url_prefix='/api/spells')
+app.register_blueprint(feat_routes, url_prefix='/api/feats')
+app.register_blueprint(character_class_routes, url_prefix='/api/classes')
+app.register_blueprint(item_routes, url_prefix='/api/items')
+app.register_blueprint(race_routes, url_prefix='/api/races')
+app.register_blueprint(skill_routes, url_prefix='/api/skills')
 db.init_app(app)
 Migrate(app, db)
 

@@ -1,0 +1,27 @@
+#character-sheet-container {
+  /* background-color: aquamarine; */
+  width: 90%;
+  margin: auto;
+}
+
+#character-sheet-character-info {
+  list-style-type: none;
+  border: 1px solid red;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.character-info-li {
+  text-align: center;
+}
+
+#character-sheet-character-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.character-sheet-h2 {
+  font-size: 1rem;
+}

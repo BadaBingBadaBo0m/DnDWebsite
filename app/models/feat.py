@@ -11,3 +11,10 @@ class Feat(db.Model):
     description = db.Column(db.String(500), nullable=False)
 
     characters = db.relationship('Character', secondary='character_feats', back_populates='feats')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+        }

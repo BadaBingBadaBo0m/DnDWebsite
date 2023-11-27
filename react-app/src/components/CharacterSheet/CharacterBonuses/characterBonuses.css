@@ -1,0 +1,5 @@
+.character-bonus {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
