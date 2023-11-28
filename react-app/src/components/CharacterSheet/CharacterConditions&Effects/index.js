@@ -30,18 +30,18 @@ const CharacterConditionsAndEffects = () => {
         </div>
 
         <div id='character-death-saves'>
-          <div class='death-save failure'>
+          <div className='death-save failure'>
             <h2 className='character-sheet-h2'>FAILURE</h2>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
           </div>
 
-          <div class='death-save success'>
+          <div className='death-save success'>
             <h2 className='character-sheet-h2'>SUCCESS</h2>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
           </div>
 
           <h2 className='character-sheet-h2'>DEATH SAVES</h2>
