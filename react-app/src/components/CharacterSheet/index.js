@@ -19,7 +19,7 @@ const CharacterSheet = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await dispatch(getCharacterById(1));
+      const res = await dispatch(getCharacterById(3));
 
       if (res.errors) {
         setErrors(res);
@@ -68,9 +68,9 @@ const CharacterSheet = () => {
       <div id='character-sheet-character-stats'>
         <CharacterSavingThrows />
 
-        <CharacterVitals />
+        <CharacterVitals character={character} />
 
-        <CharacterConditionsAndEffects />
+        <CharacterConditionsAndEffects character={character} />
 
         <CharacterBonuses />
       </div>
