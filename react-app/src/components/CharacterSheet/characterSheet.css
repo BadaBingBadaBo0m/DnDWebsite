@@ -25,3 +25,27 @@
 .character-sheet-h2 {
   font-size: 1rem;
 }
+
+#character-proficiency-skills-quick-reference {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1.4fr 0.6fr;
+  /* grid-auto-columns: max-content max-content max-content; */
+  gap: 0px 0px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "character-skills quick-reference"
+    "character-proficiencies quick-reference";
+}
+
+#character-skills-tree {
+  grid-area: character-skills;
+}
+
+#character-proficiency-container {
+  grid-area: character-proficiencies;
+}
+
+#quick-reference-container {
+  grid-area: quick-reference;
+}

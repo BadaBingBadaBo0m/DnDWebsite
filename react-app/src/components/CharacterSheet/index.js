@@ -6,6 +6,9 @@ import CharacterSavingThrows from './CharacterSavingThrows';
 import CharacterVitals from './CharacterVitals';
 import CharacterConditionsAndEffects from './CharacterConditions&Effects';
 import CharacterBonuses from './CharacterBonuses';
+import CharacterSkills from './CharacterSkills';
+import CharacterProficiencies from './CharacterProficiencies';
+import QuickReference from './CharacterQuickReference';
 
 const CharacterSheet = () => {
 
@@ -48,6 +51,14 @@ const CharacterSheet = () => {
         <CharacterConditionsAndEffects />
 
         <CharacterBonuses />
+      </div>
+
+      <div id='character-proficiency-skills-quick-reference'>
+        <CharacterSkills />
+
+        <CharacterProficiencies />
+
+        <QuickReference />
       </div>
 
     </div>
