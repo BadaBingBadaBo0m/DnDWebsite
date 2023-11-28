@@ -27,6 +27,12 @@ const CharacterSheet = () => {
     })();
   }, []);
 
+  if (!Object.keys(character).length) {
+    return (
+      <h1>Bruh it loading</h1>
+    );
+  };
+
 
   return (
     <div id='character-sheet-container'>
