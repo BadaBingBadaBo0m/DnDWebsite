@@ -1,38 +1,38 @@
 import React from 'react';
 import './character-ability-score.css';
 
-const CharacterAbilityScores = () => {
+const CharacterAbilityScores = ({ character }) => {
 
   return (
     <div id='character-ability-scores'>
       <div className='ability-score'>
         <h3>STRENGTH</h3>
-        <p>10</p>
+        <p>{character.strength}</p>
       </div>
 
       <div className='ability-score'>
         <h3>DEXTERITY</h3>
-        <p>10</p>
+        <p>{character.dexterity}</p>
       </div>
 
       <div className='ability-score'>
         <h3>CONSTITUTION</h3>
-        <p>10</p>
+        <p>{character.constitution}</p>
       </div>
 
       <div className='ability-score'>
         <h3>INTELLIGENCE</h3>
-        <p>10</p>
+        <p>{character.intelligence}</p>
       </div>
 
       <div className='ability-score'>
         <h3>WISDOM</h3>
-        <p>10</p>
+        <p>{character.wisdom}</p>
       </div>
 
       <div className='ability-score'>
         <h3>CHARISMA</h3>
-        <p>10</p>
+        <p>{character.charisma}</p>
       </div>
 
       <div className='ability-score'>

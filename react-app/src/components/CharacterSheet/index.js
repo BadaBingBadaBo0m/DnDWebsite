@@ -39,17 +39,17 @@ const CharacterSheet = () => {
       <ul id='character-sheet-character-info'>
         <li className='character-info-li'>
           <h2>Class</h2>
-          <p>Class Name</p>
+          <p>{character.classes[0].name}</p>
         </li>
 
         <li className='character-info-li'>
           <h2>Level</h2>
-          <p>Level number</p>
+          <p>{character.level}</p>
         </li>
 
         <li className='character-info-li'>
           <h2>Name</h2>
-          <h1>Character name</h1>
+          <h1>{character.name}</h1>
         </li>
 
         <li className='character-info-li'>
@@ -63,7 +63,7 @@ const CharacterSheet = () => {
         </li>
       </ul>
 
-      <CharacterAbilityScores />
+      <CharacterAbilityScores character={character} />
 
       <div id='character-sheet-character-stats'>
         <CharacterSavingThrows />

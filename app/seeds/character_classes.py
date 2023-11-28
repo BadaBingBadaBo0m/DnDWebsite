@@ -6,7 +6,8 @@ def seed_character_classes():
     connection = db.engine.connect()
 
     data = [
-        {"class_id": 1, "character_id": 1}
+        {"class_id": 1, "character_id": 1},
+        {"class_id": 2, "character_id": 2},
     ]
 
     for character in data:
