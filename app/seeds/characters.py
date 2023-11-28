@@ -34,8 +34,26 @@ def seed_characters():
         charisma = 10
     )
 
+    character3 = Character(
+        owner_id = 1,
+        level = 1,
+        name = "Bartholomew",
+        gender = "Male",
+        race_id = 1,
+        description = "I am not a cool guy",
+        hit_points = 10,
+        strength = 10,
+        dexterity = 10,
+        constitution = 10,
+        intelligence = 10,
+        wisdom = 10,
+        charisma = 10
+    )
+
     db.session.add(character1)
     db.session.add(character2)
+    db.session.add(character3)
+
     db.session.commit()
 
 def undo_characters():

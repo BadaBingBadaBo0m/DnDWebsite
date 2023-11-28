@@ -2,11 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import CharacterItem from './CharacterItem';
 import { useSelector } from 'react-redux';
+import './UserCharacterList.css';
 
 const UserCharacterList = () => {
     const sessionUser = useSelector(state => state.session.user);
     return (
-        <div>
+        <div id='character-container'>
+            <h1>My Characters</h1>
+            <h1>Create Character</h1>
             {sessionUser ? (
                 <div>
                     <ul className='character-list'>

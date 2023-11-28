@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from "react-redux"
 import './CharacterItem.css';
 
 const CharacterItem = ({character}) => {
-    const curentUser = useSelector(state => state.session.user)
 
     return (
-        <div>
+        <div className='character-item'>
           <h1>{character.name}</h1>
+          <p>{character.level} | {character.race.name}</p>
         </div>
       )
 
