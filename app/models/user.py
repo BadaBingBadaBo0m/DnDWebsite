@@ -35,6 +35,6 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'characters': [character.id for character in self.characters],
+            'characters': [character.user_character_to_dict() for character in self.characters],
             'campaigns': [campaign.id for campaign in self.campaigns]
         }
