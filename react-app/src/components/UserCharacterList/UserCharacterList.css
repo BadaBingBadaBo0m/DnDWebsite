@@ -1,0 +1,17 @@
+.character-list {
+    gap: 10px;
+    width: 100%;
+    /* overflow-y: auto; */
+    padding-right: 1rem;
+    margin: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 15rem 15rem 15rem;
+    grid-auto-flow: row;
+    list-style: none;
+  }
+
+#character-container {
+    max-width: 50rem;
+    margin: auto;
+}

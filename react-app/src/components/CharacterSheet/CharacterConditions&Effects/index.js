@@ -1,7 +1,7 @@
 import React from 'react';
 import './characterConditions&Effects.css';
 
-const CharacterConditionsAndEffects = () => {
+const CharacterConditionsAndEffects = ({ character }) => {
 
   return (
     <div id='character-conditions-and-effects-container'>
@@ -11,12 +11,12 @@ const CharacterConditionsAndEffects = () => {
           <div id='hit-die-container'>
             <div className='hit-die max'>
               <h2 className='character-sheet-h2'>MAX</h2>
-              <p>1d8</p>
+              <p>{character.level}</p>
             </div>
 
             <div className='hit-die current'>
               <h2 className='character-sheet-h2'>CURRENT</h2>
-              <p>1d8</p>
+              <p>{character.classes[0].hit_dice}</p>
             </div>
           </div>
 
@@ -24,24 +24,25 @@ const CharacterConditionsAndEffects = () => {
         </div>
 
         <div id='character-armor-class'>
+          {/* armor class is calculated later 10 + dex modifier + armor*/}
           <p>16</p>
           <h2 className='character-sheet-h2'>ARMOR</h2>
           <h2 className='character-sheet-h2'>CLASS</h2>
         </div>
 
         <div id='character-death-saves'>
-          <div class='death-save failure'>
+          <div className='death-save failure'>
             <h2 className='character-sheet-h2'>FAILURE</h2>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
           </div>
 
-          <div class='death-save success'>
+          <div className='death-save success'>
             <h2 className='character-sheet-h2'>SUCCESS</h2>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
-            <i class="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
+            <i className="fa-regular fa-circle"></i>
           </div>
 
           <h2 className='character-sheet-h2'>DEATH SAVES</h2>
