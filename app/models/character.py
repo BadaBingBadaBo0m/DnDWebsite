@@ -41,6 +41,16 @@ class Character(db.Model):
     # Character and class relationship
     classes = db.relationship('Character_Class', secondary='character_classes', back_populates='characters')
 
+    def user_character_to_dict(self):
+        return {
+            'id': self.id,
+            'level': self.level,
+            'name': self.name,
+            'campaigns': [campaign.to_dict_simple() for campaign in self.campaign],
+            'classes': [class_.to_dict() for class_ in self.classes],
+            'race': self.race.to_dict()
+        }
+
     def to_dict(self):
         return {
             'id': self.id,
