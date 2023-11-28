@@ -1,6 +1,3 @@
-import React from 'react';
-import './characterSheet.css';
-
 import CharacterAbilityScores from './CharacterAbilityScores';
 import CharacterSavingThrows from './CharacterSavingThrows';
 import CharacterVitals from './CharacterVitals';
@@ -10,7 +7,26 @@ import CharacterSkills from './CharacterSkills';
 import CharacterProficiencies from './CharacterProficiencies';
 import QuickReference from './CharacterQuickReference';
 
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCharacterById } from '../../store/character';
+import './characterSheet.css';
+
 const CharacterSheet = () => {
+  const dispatch = useDispatch();
+  const character = useSelector(state => state.currentCharacter)
+  const [errors, setErrors] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await dispatch(getCharacterById(1));
+
+      if (res.errors) {
+        setErrors(res);
+      }
+    })();
+  }, []);
+
 
   return (
     <div id='character-sheet-container'>
