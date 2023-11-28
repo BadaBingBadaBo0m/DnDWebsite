@@ -68,9 +68,9 @@ const CharacterSheet = () => {
       <div id='character-sheet-character-stats'>
         <CharacterSavingThrows />
 
-        <CharacterVitals />
+        <CharacterVitals character={character} />
 
-        <CharacterConditionsAndEffects />
+        <CharacterConditionsAndEffects character={character} />
 
         <CharacterBonuses />
       </div>
