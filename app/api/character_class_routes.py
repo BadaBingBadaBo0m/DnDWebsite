@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Character_Class, db 
 from .auth_routes import validation_errors_to_error_messages
+# TODO ADD FORMS
 #from app.forms import SpellForm
 from datetime import datetime
 
