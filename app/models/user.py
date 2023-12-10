@@ -14,11 +14,6 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    # User and character relationship
-    characters = db.relationship('Character', back_populates='owner', cascade='all, delete-orphan')
-    # User and campaign relationship
-    campaigns = db.relationship('Campaign', back_populates='owner', cascade='all, delete-orphan')
-
     @property
     def password(self):
         return self.hashed_password
@@ -34,7 +29,5 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email,
-            'characters': [character.user_character_to_dict() for character in self.characters],
-            'campaigns': [campaign.id for campaign in self.campaigns]
+            'email': self.email
         }
