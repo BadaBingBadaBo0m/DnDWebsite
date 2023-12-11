@@ -1,7 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 class Character_Class(db.Model):
-    __tablename__ = 'character_classes'
+    __tablename__ = 'classes'
 
     if environment == 'production':
         __table_args__ = {'schema': SCHEMA}
@@ -12,6 +12,8 @@ class Character_Class(db.Model):
     description = db.Column(db.String(500), nullable=False)
     max_skill_proficiencies = db.Column(db.Integer, nullable=False)
     level = db.Column(db.Integer, nullable=False)
+
+    proficiencies = db.relationship("Proficiency", secondary="class_proficiencies", back_populates="classes")
 
     def to_dict(self):
         return {
