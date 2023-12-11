@@ -13,7 +13,7 @@ class Character_Class(db.Model):
     max_skill_proficiencies = db.Column(db.Integer, nullable=False)
     level = db.Column(db.Integer, nullable=False)
 
-    proficiencies = db.relationship("Proficiency", secondary="class_proficiencies", back_populates="classes")
+    # proficiencies = db.relationship("Proficiency", secondary="class_proficiencies", back_populates="classes")
 
     def to_dict(self):
         return {

@@ -10,7 +10,7 @@ class Proficiency(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(500), nullable=False)
 
-    classes = db.relationship("Character_Class", secondary="class_proficiencies", back_populates="proficiencies")
+    # classes = db.relationship("Character_Class", secondary="class_proficiencies", back_populates="proficiencies")
 
     def to_dict(self):
         return {
