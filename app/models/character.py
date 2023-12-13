@@ -10,7 +10,7 @@ class Character(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
     gender = db.Column(db.String(255), nullable=False, unique=True)
-    descripton = db.Column(db.String(255), nullable=False, unique=True)
+    description = db.Column(db.String(255), nullable=False, unique=True)
     createdAt = db.Column(db.DateTime, default=db.func.now())
     updatedAt = db.Column(db.DateTime, default=db.func.now())
 
