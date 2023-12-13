@@ -9,7 +9,7 @@ class Spell(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
-    descripton = db.Column(db.String(255), nullable=False, unique=True)
+    description = db.Column(db.String(255), nullable=False, unique=True)
     range = db.Column(db.String(255), nullable=False, unique=True)
     duration = db.Column(db.String(255), nullable=False, unique=True)
     components = db.Column(db.String(255), nullable=False, unique=True)
