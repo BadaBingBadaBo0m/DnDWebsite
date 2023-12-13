@@ -11,10 +11,22 @@ def seed_spells():
         ritual = False,
         concentration = False,
         casting_time = "1 action",
-        damage_at_slot_level = "8d6, 9d6, 10d6, 11d6, 12d6, 13d6, 14d6"
+        damage_at_slot_level = "3:8d6, 4:9d6, 5:10d6, 6:11d6, 7:12d6, 8:13d6, 9:14d6"
+    )
+    acid_arrow = Spell(
+        name = "Acid-Arrow",
+        description = "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
+        range = "90 feet",
+        duration = "Instantaneous",
+        components = "V, S, M",
+        ritual = False,
+        concentration = False,
+        casting_time = "1 action",
+        damage_at_slot_level = "2:4d4, 3:5d4, 4:6d4, 5:7d4, 6:8d4, 7:9d4, 8:10d4, 9:11d4"
     )
 
     db.session.add(fireball)
+    db.session.add(acid_arrow)
     
     db.session.commit()
 

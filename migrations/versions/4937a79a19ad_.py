@@ -1,19 +1,16 @@
 """empty message
 
-Revision ID: 7ea341519b35
+Revision ID: 4937a79a19ad
 Revises: 
-Create Date: 2023-12-13 16:24:19.911253
+Create Date: 2023-12-13 15:59:01.685650
 
 """
 from alembic import op
 import sqlalchemy as sa
-import os
 
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
-revision = '7ea341519b35'
+revision = '4937a79a19ad'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -98,15 +95,8 @@ def upgrade():
     sa.Column('casting_time', sa.String(length=255), nullable=False),
     sa.Column('damage_at_slot_level', sa.String(length=255), nullable=False),
     sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('casting_time'),
-    sa.UniqueConstraint('components'),
-    sa.UniqueConstraint('concentration'),
-    sa.UniqueConstraint('damage_at_slot_level'),
     sa.UniqueConstraint('description'),
-    sa.UniqueConstraint('duration'),
-    sa.UniqueConstraint('name'),
-    sa.UniqueConstraint('range'),
-    sa.UniqueConstraint('ritual')
+    sa.UniqueConstraint('name')
     )
     op.create_table('traits',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -123,9 +113,6 @@ def upgrade():
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
     )
-
-    if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 

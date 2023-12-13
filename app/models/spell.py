@@ -10,13 +10,13 @@ class Spell(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
     description = db.Column(db.String(255), nullable=False, unique=True)
-    range = db.Column(db.String(255), nullable=False, unique=True)
-    duration = db.Column(db.String(255), nullable=False, unique=True)
-    components = db.Column(db.String(255), nullable=False, unique=True)
-    ritual = db.Column(db.Boolean, nullable=False, unique=True)
-    concentration = db.Column(db.Boolean, nullable=False, unique=True)
-    casting_time = db.Column(db.String(255), nullable=False, unique=True)
-    damage_at_slot_level = db.Column(db.String(255), nullable=False, unique=True)
+    range = db.Column(db.String(255), nullable=False, )
+    duration = db.Column(db.String(255), nullable=False, )
+    components = db.Column(db.String(255), nullable=False)
+    ritual = db.Column(db.Boolean, nullable=False)
+    concentration = db.Column(db.Boolean, nullable=False)
+    casting_time = db.Column(db.String(255), nullable=False)
+    damage_at_slot_level = db.Column(db.String(255), nullable=False)
 
     def to_dict(self):
         return {
