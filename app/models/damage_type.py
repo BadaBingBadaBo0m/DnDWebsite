@@ -1,6 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
-class Damage_Types(db.Model):
+class Damage_Type(db.Model):
     __tablename__ = 'damages_types'
 
     if environment == 'production':
